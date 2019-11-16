@@ -686,5 +686,5 @@ Raden Teja Kusuma (05111640000012)
     ```bash
     db.fifa2k19Collection.getShardDistribution()
     ```
-    - Hasil
+    - Hasil <br>
     ![Screenshot from 2019-11-17 02-04-30](https://user-images.githubusercontent.com/32433590/68998030-90e6de80-08df-11ea-8e76-fa6144be58de.png)
