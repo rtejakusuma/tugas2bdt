@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
   (1..2).each do |i|
     config.vm.define "config_#{i}" do |node|
       node.vm.hostname = "config-#{i}"
-      node.vm.box = "bento/ubuntu-16.04"
+      node.vm.box = "bento/ubuntu-18.04"
       node.vm.network "private_network", ip: "192.168.12.#{i+1}"
 
       node.vm.provider "virtualbox" do |vb|
@@ -12,14 +12,14 @@ Vagrant.configure("2") do |config|
         vb.memory = "512"
       end
 
-      node.vm.provision "shell", path: "bash/config_#{i}.sh", privileged: false
+      node.vm.provision "shell", path: "sh/config-#{i}.sh", privileged: false
     end
   end
 
   (1..3).each do |i|
     config.vm.define "shard_#{i}" do |node|
     node.vm.hostname = "shard-#{i}"
-    node.vm.box = "bento/ubuntu-16.04"
+    node.vm.box = "bento/ubuntu-18.04"
     node.vm.network "private_network", ip: "192.168.12.#{3+i}"
         
     node.vm.provider "virtualbox" do |vb|
@@ -28,14 +28,14 @@ Vagrant.configure("2") do |config|
       vb.memory = "512"
     end
 
-    node.vm.provision "shell", path: "bash/shard_#{i}.sh", privileged: false
+    node.vm.provision "shell", path: "sh/shard-#{i}.sh", privileged: false
     end
   end
 
   config.vm.define "router" do |mongo_query_router|
     mongo_query_router.vm.hostname = "router"
-    mongo_query_router.vm.box = "bento/ubuntu-16.04"
-    mongo_query_router.vm.network "private_network", ip: "192.168.12.1"
+    mongo_query_router.vm.box = "bento/ubuntu-18.04"
+    mongo_query_router.vm.network "private_network", ip: "192.168.12.7"
     
     mongo_query_router.vm.provider "virtualbox" do |vb|
       vb.name = "router"
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
       vb.memory = "512"
     end
 
-    mongo_query_router.vm.provision "shell", path: "bash/router.sh", privileged: false
+    mongo_query_router.vm.provision "shell", path: "sh/router.sh", privileged: false
   end
 
 end

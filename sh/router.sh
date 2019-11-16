@@ -1,9 +1,11 @@
+sudo bash /vagrant/sh/allhost.sh
+
 # Override mongod config with current config
-sudo cp /vagrant/config/router.conf /etc/mongos.conf
+sudo cp /vagrant/conf/router.conf /etc/mongos.conf
 
 # Create new service file
 sudo touch /lib/systemd/system/mongos.service
-sudo cp /vagrant/service/mongos.service /lib/systemd/system/mongos.service
+sudo cp /vagrant/mongos.service /lib/systemd/system/mongos.service
 
 # Stop current mongo service
 sudo systemctl stop mongod
