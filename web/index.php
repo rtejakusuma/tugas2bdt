@@ -4,18 +4,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>PHP & MongoDB - CRUD Operation Tutorials - ItSolutionStuff.com</title>
+   <title>CRUD MONGODB</title>
    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 
 
 <div class="container">
-<h1>PHP & MongoDB - CRUD Operation Tutorials - ItSolutionStuff.com</h1>
+<h1>CRUD MONGODB</h1>
 
 
 <a href="create.php" class="btn btn-success">Add Crime</a>
-
+<a href="read.php"  class="btn btn-success">Lihat agegrasi-1</a>
+<a href="read2.php"  class="btn btn-success">Lihat agegrasi-2</a>
 
 <?php
 

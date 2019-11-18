@@ -58,14 +58,14 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
 <head>
-   <title>PHP & MongoDB - CRUD Operation Tutorials - ItSolutionStuff.com</title>
+   <title>CRUD MONGODB</title>
    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 
 
 <div class="container">
-   <h1>Create Book</h1>
+   <h1>CREATE CRIME</h1>
    <a href="index.php" class="btn btn-primary">Back</a>
 
 
@@ -81,6 +81,10 @@ if(isset($_POST['submit'])){
       <div class="form-group">
          <strong>YEAR:</strong>
          <input type="number" class="form-control" name="YEAR" placeholder="YEAR"></input>
+      </div>
+      <div class="form-group">
+         <strong>MURDER:</strong>
+         <input type="number" class="form-control" name="MURDER" placeholder="MURDER"></input>
       </div>
       <div class="form-group">
          <strong>ATTEMPT TO MURDER:</strong>
