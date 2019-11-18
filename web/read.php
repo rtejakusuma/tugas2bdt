@@ -8,7 +8,8 @@
         [
             '$group' => [
                 '_id'   => ['state' => '$STATE/UT', 'year' => '$YEAR'],
-                'MURDER' => ['$sum' => '$MURDER']
+                'MURDER' => ['$sum' => '$MURDER'],
+                'ATTEMPT TO MURDER' => ['$sum' => '$ATTEMPT TO MURDER']
             ]
         ]
     ])->toArray() );
@@ -16,7 +17,8 @@
     // var_dump(sizeof($summary[0])); die();
     foreach($summary[0] as $s){
         $summaries[$s['_id']['state']][$s['_id']['year']] = array(
-            'MURDER' => $s['MURDER']
+            'MURDER' => $s['MURDER'],
+            'ATTEMPT TO MURDER' => $s['ATTEMPT TO MURDER']
         );
     }
 ?>
@@ -26,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hate Crime in India</title>
+    <title>CRUD MONGODB</title>
     <style>
         th,td{
             border: 1px solid black;
@@ -40,6 +42,7 @@
         <th>State</th>
         <th>Year</th>
         <th>Murder</th>
+        <th>Attempt to Murder</th>
     </tr>
     <?php
         foreach($summaries as $statekey => $statedata){
@@ -56,6 +59,7 @@
                 echo "<tr>";
                 echo "<td>$yearkey</td>";
                 echo "<td>".$yeardata['MURDER']."</td>";
+                echo "<td>".$yeardata['ATTEMPT TO MURDER']. "</td>";
                 echo "</tr>";
             }
         }

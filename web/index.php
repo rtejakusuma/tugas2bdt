@@ -1,5 +1,9 @@
 <?php
    session_start();
+   require_once("config.php");
+    $data = $collection->find();
+    $data = $data->toArray();
+    $numOfData = sizeof($data);
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,6 +21,7 @@
 <a href="create.php" class="btn btn-success">Add Crime</a>
 <a href="read.php"  class="btn btn-success">Lihat agegrasi-1</a>
 <a href="read2.php"  class="btn btn-success">Lihat agegrasi-2</a>
+<h2>Jumlah data: <?php echo $numOfData; ?></h2>
 
 <?php
 

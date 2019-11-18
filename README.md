@@ -658,20 +658,20 @@ Raden Teja Kusuma (05111640000012)
     ```
     - Ketikkan
     ```bash
-    use fifa2k19
-    sh.enableSharding("fifa2k19")
-    db.fifa2k19Collection.ensureIndex( { _id : "hashed" } )
-    sh.shardCollection( "fifa2k19.fifa2k19Collection", { "_id" : "hashed" } )
+    use crime
+    sh.enableSharding("crime")
+    db.crimeCollection.ensureIndex( { _id : "hashed" } )
+    sh.shardCollection( "crime.crimeCollection", { "_id" : "hashed" } )
     ```
 ## Import Dataset
-1. Setelah semua konfigurasi selesai maka selanjutnya ialah mengimport dataset yang ada di `/vagrant/dataset/data.csv` ke dalam database. Caranya adalah sebagai berikut.
+1. Setelah semua konfigurasi selesai maka selanjutnya ialah mengimport dataset yang ada di `/vagrant/dataset/crime.csv` ke dalam database. Caranya adalah sebagai berikut.
     - Masuk ke router
     ```bash
     sudo vagrant ssh router
     ```
     - Import dataset
     ```bash
-    mongoimport --host 192.168.12.7 --port 27017 --db fifa2k19 --collection fifa2k19Collection --file /vagrant/dataset/data.csv --type csv --headerline
+    mongoimport --host 192.168.12.7 --port 27017 --db crime --collection crimeCollection --file /vagrant/dataset/crime.csv --type csv --headerline
     ```
 2. Setelah itu saatnya kita mengecek sharding-nya sudah berjalan atau tidak dengan cara:
     - Masuk ke router
@@ -684,7 +684,11 @@ Raden Teja Kusuma (05111640000012)
     ```
     - Cek sharding
     ```bash
-    db.fifa2k19Collection.getShardDistribution()
+    db.crimeCollection.getShardDistribution()
     ```
     - Hasil <br>
-    ![Screenshot from 2019-11-17 02-04-30](https://user-images.githubusercontent.com/32433590/68998030-90e6de80-08df-11ea-8e76-fa6144be58de.png)
+    ![test](https://user-images.githubusercontent.com/32433590/69055687-f43c5200-0a40-11ea-87ef-d2e2b4b4b9ae.png)
+
+## Implementasi CRUD MongoDB
+1. 
+    
