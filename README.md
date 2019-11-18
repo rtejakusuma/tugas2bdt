@@ -689,6 +689,42 @@ Raden Teja Kusuma (05111640000012)
     - Hasil <br>
     ![test](https://user-images.githubusercontent.com/32433590/69055687-f43c5200-0a40-11ea-87ef-d2e2b4b4b9ae.png)
 
+## PHP-MongoDB
+1. Install PHP 7.4-dev
+```bash
+sudo apt-get install php7.4-dev
+```
+2. MongoDB PHP Extension v1.6
+```bash
+wget https://pecl.php.net/get/mongodb-1.6.0.tgz
+tar zxf mongodb-1.6.0.tgz -C /tmp
+cd /tmp/mongodb-1.6.0
+phpize7.4
+./configure
+sudo make all
+sudo make install
+```
+3. Driver php-mongodb
+```bash
+cd home/kusuma16/tugas2bdt/web
+composer require mongodb/mongodb
+```
 ## Implementasi CRUD MongoDB
-1. 
-    
+1. Create
+![create](https://user-images.githubusercontent.com/32433590/69057320-37e48b00-0a44-11ea-8a34-b4ea69958dc4.png)<br>
+![create2](https://user-images.githubusercontent.com/32433590/69057322-387d2180-0a44-11ea-9483-f4e3350ddbcc.png)<br>
+![create3](https://user-images.githubusercontent.com/32433590/69057323-3915b800-0a44-11ea-84ba-e89d43e02a5f.png)<br>
+2. Update
+![update](https://user-images.githubusercontent.com/32433590/69057394-5b0f3a80-0a44-11ea-8131-02d3fe762884.png)<br>
+![update2](https://user-images.githubusercontent.com/32433590/69057395-5b0f3a80-0a44-11ea-9ef2-5d200958a2cb.png)<br>
+![update3](https://user-images.githubusercontent.com/32433590/69057396-5ba7d100-0a44-11ea-96ac-afd4f32980d0.png)<br>
+3. Delete
+![delete](https://user-images.githubusercontent.com/32433590/69057448-7f6b1700-0a44-11ea-8ebd-14511cc33225.png)<br>
+![delete2](https://user-images.githubusercontent.com/32433590/69057449-8003ad80-0a44-11ea-8412-9a5a2e06c55f.png)
+4. Read
+    - `count` jumlah data dalam database <br>
+    ![read](https://user-images.githubusercontent.com/32433590/69057731-dd97fa00-0a44-11ea-8113-2ce91fd2596d.png)<br>
+    - Melihat Jumlah murder<br>
+    ![read2](https://user-images.githubusercontent.com/32433590/69057732-dd97fa00-0a44-11ea-826d-aaf4c9bf1929.png)
+    - Melihat Crime terhadap Wanita<br>
+    ![read3](https://user-images.githubusercontent.com/32433590/69057734-de309080-0a44-11ea-9984-6140326a9de6.png)
