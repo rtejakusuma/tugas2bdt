@@ -1,9 +1,14 @@
 <?php
    session_start();
    require_once("config.php");
-    $data = $collection->find();
-    $data = $data->toArray();
-    $numOfData = sizeof($data);
+    #$data = $collection->find();
+    #$data = $data->toArray();
+    #$numOfData = sizeof($data);
+   $numOfData = $collection->aggregate([
+      [
+         '$count' => 'num'
+      ]
+   ])->toArray()[0]['num'];
 ?>
 <!DOCTYPE html>
 <html>
